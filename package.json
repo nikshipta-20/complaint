@@ -1,0 +1,27 @@
+{
+  "name": "studocomp",
+  "version": "1.0.0",
+  "description": "studocomp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikshipta",
+  "license": "ISC",
+  "dependencies": {
+    "@jupyterlab/services": "^6.6.3",
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.0-alpha1",
+    "bootstrap-icons": "^1.10.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.22"
+  }
+}

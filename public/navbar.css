@@ -1,0 +1,96 @@
+.btn {
+  padding: .45rem 1.5rem .35rem;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  /* background: black; */
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, black, #021d3f, #E7B10A);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, black, #021d3f, #E7B10A);
+}
+
+.wrapper {
+  display: flex;
+}
+
+.side-menu {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* background: -webkit-linear-gradient(to right, black, #E7B10A); */
+  background: linear-gradient(to right, black #021d3f, #E7B10A);
+  border-right: 1px solid #ccc;
+  /* overflow-y: auto; */
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #000;
+}
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#right-nav{
+text-decoration: black;
+color: black;
+}
+
+
+i {
+  font-size: 20px;
+  font-family: none;
+}
+.dashboard{
+  margin-left: 5%;
+  margin-top: 3%;
+}
+.dashboard-icon:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+}
+.dashboard-icon:before {
+  /* ... */
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  background: linear-gradient(to bottom, #555, #333);
+}
+
+.dashboard-icon:after {
+  /* ... */
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+

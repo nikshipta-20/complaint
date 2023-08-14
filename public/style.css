@@ -1,0 +1,229 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    /* background-color: white; */
+}
+.heading{
+    text-align: center;
+}
+.container{
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    height: 200vh;
+    align-items: center;
+    background: black;
+}
+.container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.card{
+    height: 350px;
+    margin: 50px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+.card .bottom{
+    position: absolute;
+    left: 100px;
+}
+img{
+    height: 350px;
+    width: 350px;
+    border-radius: 3px;
+    transition: .5s;
+}
+.intro{
+    height: 70px;
+    width: 350px;
+    padding: 6px;
+    box-sizing: border-box;
+    background: rgb(27, 27, 27, .5);
+    color: white;
+    transition: .5s;
+    background-color: none;
+}
+.top .intro{
+    position: absolute;
+    bottom: -150px;
+} 
+.card:hover .intro .top{
+    height: 220px;
+    bottom: -150px;
+    background: black;
+    opacity: 0.8;
+}
+
+.middle .intro{
+    position: absolute;
+    bottom: 130px;
+}
+.card:hover .intro .middle{
+    height: 220px;
+    bottom: 130px;
+    background: black;
+    opacity: 0.8;
+}
+
+.bottom .intro{
+    position: absolute;
+    bottom: -270px;
+} 
+.card:hover .intro .bottom{
+    height: 220px;
+    bottom: -270px;
+    background: black;
+    opacity: 0.8;
+}
+
+h1{
+    margin: 10px;
+    font-size: 40px;
+    text-align: center;
+}
+a{
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    /* border: 2px solid white; */
+    font-family: 'montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    min-width: 200px;
+    cursor: pointer;
+}
+button{
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    border: 2px solid white;
+    font-family: 'montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    min-width: 200px;
+    cursor: pointer;
+}
+p{
+    text-align: center;
+}
+.card:hover{
+    cursor: pointer;
+}
+.card:hover .intro{
+    height: 220px;
+}
+.card:hover p{
+    opacity: 1;
+    visibility: visible;
+}
+.card:hover a{
+    opacity: 1;
+    visibility: visible; 
+}
+.card:hover button{
+    opacity: 1;
+    visibility: visible; 
+    background-color: white; 
+}
+.card:hover img{
+    transform: scale(1.1) rotate(-3deg);
+}
+#scroll2{
+    text-align: center;
+    background-color: #ECECEC;
+    padding: 5%;
+}
+
+#contact{
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+#right-nav{
+    margin-right: 5%;
+}
+
+.nav-link{
+    padding-right: 5%;
+    color: black;
+}
+
+.nav-item{
+    color: black;
+}
+
+.navbar-brand{
+    margin-left: 5%;
+}
+
+.navbar-main{
+    margin-top: 0%;
+    padding: 0;
+}
+#scroll2{
+    background: -webkit-linear-gradient(left, #D1D1D1, white);
+}
+.tagline{
+    margin-left: 9rem;
+    padding-bottom: 2%;
+}
+.tag{
+    margin-left: 8rem;
+    font-size: 8rem;
+}
+#content{
+    margin: 0 4% 0 4%;
+    margin-bottom: 3%;
+    background-color: black;
+    color: white;
+    font-family: 'Merriweather', serif;
+}
+#submit-button{
+    margin-left: 45%;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid white;
+    font-family: 'montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    min-width: 200px;
+    cursor: pointer;
+
+}
+#complaint{
+    padding: 6% 0 6% 0;
+    background-color: white;
+    margin-bottom: 3%;
+    margin: 3%;
+}
+#submit{
+    padding-bottom: 5%;
+}
+
+label {
+    /* float: left; */
+    margin-left: 5.5%;
+    padding-bottom: 3%;
+    width: 30%;
+    visibility: visible;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}
+#submit-button{
+    background-color: white;
+
+}
+
+.container .inprogress-complaints .intro h1{
+    text-align: center; 
+    padding-top: 2%;
+}

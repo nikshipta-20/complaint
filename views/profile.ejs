@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="NAVBAR2.CSS">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        .navbar-top {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0px 4px 8px 0px grey;
+    height: 70px;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    padding-top: 15px;
+    position: absolute;
+    left: 45%;
+}
+
+.navbar-top ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 18px 50px 0 40px;
+}
+
+.navbar-top ul li {
+    float: left;
+}
+
+.navbar-top ul li a {
+    color: #333;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.icon-count {
+    background-color: #ff0000;
+    color: #fff;
+    float: right;
+    font-size: 11px;
+    left: -25px;
+    padding: 2px;
+    position: relative;
+}
+
+/* End */
+
+/* Sidenav */
+.sidenav {
+  margin-left: 7%;
+    background-color: #fff;
+    color: #333;
+    border-radius: 25px;
+    height: 86%;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 10%;
+    margin-top: 1%;
+    position: absolute;
+    top: 70px;
+    width: 250px;
+}
+
+.profile {
+    margin-bottom: 20px;
+    margin-top: -12px;
+    text-align: center;
+}
+
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 60px;
+}
+
+.job {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.url, hr {
+    text-align: center;
+}
+
+.url hr {
+    margin-left: 20%;
+    width: 60%;
+}
+
+.url a {
+    color: #818181;
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+.url a:hover, .url .active {
+    background-color: #F4F4F2;
+    border-radius: 28px;
+    color: #000;
+    margin-left: 14%;
+    width: 65%;
+}
+
+/* End */
+
+/* Main */
+.main {
+    margin-top: 2%;
+    margin-left: 29%;
+    font-size: 28px;
+    padding: 0 10px;
+    width: 58%;
+}
+
+.main h2 {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main .card {
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 50px;
+}
+
+.main .card table {
+    border: none;
+    font-size: 16px;
+    height: 270px;
+    width: 80%;
+}
+
+.edit {
+    position: absolute;
+    color: #e7e7e8;
+    right: 14%;
+}
+
+.card{
+  margin: 10%;
+  padding-right: auto;
+}
+
+h2{
+  margin-left: 40%;
+}
+body {
+    background-color: #e8f5ff;
+    font-family: Arial;
+    overflow: hidden;
+}
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <div id="parent">
+        <div class="menu-icon" id="menu-icon" style="color: whitesmoke; padding-right: 3%; padding-left: 3%; transition: transform 0.2s ease-in-out;">&#9776;</div>
+        <div class="wrapper" id="wrapper" style="visibility: hidden; transition: transform 0.2s ease-in-out;
+        z-index: 0;">
+          <nav class="side-menu" style="padding-top: 10%">
+            <h4 style="text-align: center;">Recent Complaints</h4>
+            <ul>
+              <li><a href="#">Menu Item 1</a></li>
+              <li><a href="#">Menu Item 2</a></li>
+              <li><a href="#">Menu Item 3</a></li>
+              <li><a href="#">Menu Item 4</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="/home" style="padding-left: 3%">HOME</a>
+  
+      <!-- Toggle button -->
+      <!-- <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars text-light"></i>
+      </button> -->
+      
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link active" aria-current="page" href="#!">
+              <div>
+                <i class="fas fa-home fa-lg mb-1"></i>
+              </div>
+            </a>
+          <!-- <li class="nav-item dropdown text-center mx-2 mx-lg-1"> -->
+            
+            
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Left links -->
+  
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0" id="right-nav" style="color: black">
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="/mycomplaints">
+              <div>
+                <i class="fas fa-globe-americas fa-lg mb-1"></i>
+                <!-- <span class="badge rounded-pill badge-notification bg-dark">11</span> -->
+              </div>
+              MY COMPLAINTS
+            </a>
+          </li>
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="/complaints">
+              <div>
+                <i class="fas fa-bell fa-lg mb-1"></i>
+                <!-- <span class="badge rounded-pill badge-notification bg-dark">11</span> -->
+              </div>
+              COMPLAINTS
+            </a>
+          </li>
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="/profile">
+              <div>
+                <i class="fas fa-globe-americas fa-lg mb-1"></i>
+                <!-- <span class="badge rounded-pill badge-notification bg-dark">11</span> -->
+              </div>
+              PROFILE
+            </a>
+          </li>
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="/signin">
+              <div>
+                <i class="fas fa-globe-americas fa-lg mb-1"></i>
+                <!-- <span class="badge rounded-pill badge-notification bg-dark">11</span> -->
+              </div>
+              LOG OUT
+            </a>
+          </li>
+        </ul>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <div class="sidenav">
+    <div class="profile">
+
+        <div class="name">
+            P. Nikshipta
+        </div>
+        <div class="job">
+            421235
+        </div>
+    </div>
+
+    <div class="sidenav-url">
+        <div class="url">
+            <a href="/profile" class="active">Profile</a>
+            <hr align="center">
+        </div>
+        <div class="url">
+            <a href="/settings">Settings</a>
+            <hr align="center">
+        </div>
+    </div>
+</div>
+<!-- End -->
+
+<!-- Main -->
+<div class="main">
+    <h2>PROFILE</h2>
+    <div class="card">
+        <div class="card-body">
+            <i class="fa fa-pen fa-xs edit"></i>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>P. Nikshipta</td>
+                    </tr>
+                    <tr>
+                      <td>Roll no.</td>
+                      <td>:</td>
+                      <td>421235</td>
+                    </tr>
+                    <tr>
+                        <td>Mail ID</td>
+                        <td>:</td>
+                        <td>421235@student.nitandhra.ac.in</td>
+                    </tr>
+                    <tr>
+                        <td>Course</td>
+                        <td>:</td>
+                        <td>B.Tech</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>:</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Branch</td>
+                        <td>:</td>
+                        <td>CSE</td>
+                    </tr>
+                    <tr>
+                        <td>No. of complaints registered</td>
+                        <td>:</td>
+                        <td>10</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+  <script src="navbar.js"></script>
+  <script>
+    const parent = document.querySelector("#parent");
+    const sidemenu = document.querySelector("#menu-icon");
+    const items = document.querySelector('#wrapper');
+    parent.addEventListener('click', () => {
+      sidemenu.style.visibility = 'hidden';
+      items.style.visibility = 'visible';
+    });
+
+    parent.addEventListener('mouseleave', () => {
+      items.style.visibility = 'hidden';
+      sidemenu.style.visibility = 'visible';
+    });
+  </script>
+</body>
+</html>
