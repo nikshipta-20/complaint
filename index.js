@@ -35,10 +35,10 @@ app.use(session({
 
 // db connection
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '#Nikki20/9',
-    database: 'complaintco'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DBNAME
 });
 
 pool.getConnection(function(err) {
