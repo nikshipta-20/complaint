@@ -186,7 +186,7 @@ app.get("/dept", function(req, res) {
 let deptid = 0;
 app.post("/dept", (req, res) => {
     const dname = req.body.buttonValue;
-    const loggedInUsername = req.session.username;
+    const loggedInUsername = req.session.user.username;
     console.log("dept at line 189: ", dname);
 
     pool.query('select * from departments where dname = ?', [dname], (err, results, fields) => {
