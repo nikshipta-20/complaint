@@ -46,8 +46,15 @@ pool.getConnection(function(err) {
     else console.log("Successfully connected to database");
 })
 
-app.listen(4899, () => {
-    console.log("Server running on port 4899");
+// app.listen(4899, () => {
+//     console.log("Server running on port 4899");
+// });
+
+const HOST = '0.0.0.0';
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, HOST, () => {
+    console.log(`Server running on http://${HOST}:${PORT}`);
 });
 
 let loggedInUsername = null;
