@@ -96,19 +96,19 @@
                 <div class="card top">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Mess</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="mess" class="select" type="submit" href="/register" value="Mess">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="mess" class="select" type="submit" value="Mess">Register</button></p>
                     </div>
                 </div>
                 <div class="card middle">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Hostel</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="hostel" class="select" type="submit" href="/register" value="Hostel">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="hostel" class="select" type="submit" value="Hostel">Register</button></p>
                     </div>
                 </div>
                 <div class="card bottom">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Academics</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="academics" class="select" type="submit" href="/register" value="Academics">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="academics" class="select" type="submit" value="Academics">Register</button></p>
                     </div>
                 </div>
             </div>
@@ -117,19 +117,19 @@
                 <div class="card top">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Administration</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="administration" class="select" type="submit" href="/register" value="Administration">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="administration" class="select" type="button" value="Administration">Register</button></p>
                     </div>
                 </div>
                 <div class="card middle">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Sports</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="sports" class="select" type="submit" href="/register" value="Sports">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="sports" class="select" type="button" value="Sports">Register</button></p>
                     </div>
                 </div>
                 <div class="card bottom">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Student Welfare</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="student" class="select" type="submit" href="/register" value="Student Welfare">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="student" class="select" type="button" value="Student Welfare">Register</button></p>
                     </div>
                 </div>
             </div>
@@ -138,19 +138,19 @@
                 <div class="card top">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Women Grievances</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="women" class="select" type="submit" href="/register" value="Women Grievances">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="women" class="select" type="button" value="Women Grievances">Register</button></p>
                     </div>
                 </div>
                 <div class="card middle">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Networking</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="networking" class="select" type="submit" href="/register" value="Networking">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="networking" class="select" type="button" value="Networking">Register</button></p>
                     </div>
                 </div>
                 <div class="card bottom">
                     <div class="intro">
                         <h1 style="text-align: center; padding-top: 2%;">Others</h1>
-                        <p style="text-align: center; margin-left: 39.5%"><button id="others" class="select" type="submit" href="/register" value="Others">Register</button></p>
+                        <p style="text-align: center; margin-left: 39.5%"><button id="others" class="select" type="button" value="Others">Register</button></p>
                     </div>
                 </div>
             </div>
@@ -161,7 +161,23 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+     <script>
+        $(".select").click(function(event) {
+            var buttonValue = $(this).val();
+            $.ajax({
+                url: '/dept',
+                method: 'POST',
+                data: { buttonValue: buttonValue },
+                success: function(response) {
+                    window.location.href = "/register";
+                },
+                error: function(err) {
+                    console.error(err);
+                }
+            });
+        });
+    </script>
+    <!-- <script>
         var button = document.getElementById('mess');
         button.addEventListener('click', function(event) {
             var buttonValue = event.target.value;
@@ -259,7 +275,7 @@
             data: { buttonValue: buttonValue }
             });
         });
-    </script>
+    </script> -->
 
 </body>
 </html>
