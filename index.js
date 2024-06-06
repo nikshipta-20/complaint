@@ -186,7 +186,8 @@ app.get("/dept", function(req, res) {
 let deptid = 0;
 app.post("/dept", (req, res) => {
     const dname = req.body.buttonValue;
-    console.log("dept: ", req.body.buttonValue);
+    const loggedInUsername = req.session.username;
+    console.log("dept at line 189: ", dname);
 
     pool.query('select * from departments where dname = ?', [dname], (err, results, fields) => {
         if (err) {
@@ -194,13 +195,13 @@ app.post("/dept", (req, res) => {
             return res.status(500).send("Server error");
         }
         if(results.length > 0){
-            console.log(results);
-            deptid = results[0].deptid;
-            req.session.deptid = results[0].deptid;
-            console.log("deptid: ", deptid);
+            console.log("results ", results);
+            const deptid = results[0].deptid;
+            req.session.deptid = deptid;
+            console.log("deptid at line 200: ", deptid);
             console.log(loggedInUsername);
-            // res.render("register", {deptid: results[0].deptid});
-            res.redirect("/register");
+            res.render("register", {deptid: results[0].deptid});
+            // res.redirect("/register");
         }
         else {
             res.status(404).send("Department not found");
@@ -210,12 +211,11 @@ app.post("/dept", (req, res) => {
 
 
 app.get("/register", function(req, res) {
-    if (!req.session.deptid) {
-        return res.redirect("/dept");
-    }
+    // if (!req.session.deptid) {
+    //     return res.redirect("/dept");
+    // }
     res.render("register");
 })
-
 
 let compid;
 app.post("/register", (req, res) => {
