@@ -46,15 +46,8 @@ pool.getConnection(function(err) {
     else console.log("Successfully connected to database");
 })
 
-// app.listen(4899, () => {
-//     console.log("Server running on port 4899");
-// });
-
-const HOST = '0.0.0.0';
-const PORT = process.env.PORT || 10000;
-
-app.listen(PORT, HOST, () => {
-    console.log(`Server running on http://${HOST}:${PORT}`);
+app.listen(4899, () => {
+    console.log("Server running on port 4899");
 });
 
 let loggedInUsername = null;
@@ -193,7 +186,7 @@ app.get("/dept", function(req, res) {
 let deptid = 0;
 app.post("/dept", (req, res) => {
     const dname = req.body.buttonValue;
-    const loggedInUsername = req.session.user.username;
+    const loggedInUsername = req.session.username;
     console.log("dept at line 189: ", dname);
 
     pool.query('select * from departments where dname = ?', [dname], (err, results, fields) => {
@@ -223,6 +216,7 @@ app.get("/register", function(req, res) {
     // }
     res.render("register");
 })
+
 
 let compid;
 app.post("/register", (req, res) => {
@@ -372,7 +366,7 @@ app.post("/complaints/downvote", function(req, res, next) {
     const userid = req.session.user?.username;
 
     if (!userid) {
-        return res.redirect('/signin');
+        return res.redirect('/');
     }
     pool.query('SELECT * FROM upvotes WHERE cid = ? AND userid = ?', [cid, userid], (err, results) => {
         if (err) return res.status(500).json({ message: 'Database error', error: err });
@@ -529,7 +523,7 @@ app.get("/dcomplaints", (req, res) => {
 
 app.get("/dashboard", function(req, res) {
     if (!req.session.user) {
-        return res.redirect('/signin');
+        return res.redirect('/');
     }
     // console.log("dusername: ", loggedInDusername);
 
@@ -647,6 +641,7 @@ app.get("/dashboard", function(req, res) {
 });
 
 
+
 app.post("/dashboard", function(req, res) {
     res.redirect("/dcomplaints");
 })
@@ -656,7 +651,7 @@ app.get("/dcomplaints/edit/:cid", function(req, res, next) {
     const loggedInDusername = req.session.user?.username;
 
     if (!loggedInDusername) {
-        return res.redirect('/signin');
+        return res.redirect('/');
     }
     var cid = req.params.cid;
     pool.query(`SELECT * FROM complaints WHERE cid = ?`,[cid], (err, results) => {
@@ -674,10 +669,10 @@ app.get("/dcomplaints/edit/:cid", function(req, res, next) {
 
 
 app.post("/dcomplaints/edit/:cid", function(req, res, next) {
-    const loggedInDusername = req.session.user?.username;
+    const loggedInDusername = req.session.user?.dusername;
 
     if (!loggedInDusername) {
-        return res.redirect('/signin');
+        return res.redirect('/');
     }
     var cid = req.params.cid;
     var status = req.body.status;
