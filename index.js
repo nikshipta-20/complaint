@@ -669,7 +669,7 @@ app.get("/dcomplaints/edit/:cid", function(req, res, next) {
 
 
 app.post("/dcomplaints/edit/:cid", function(req, res, next) {
-    const loggedInDusername = req.session.user?.dusername;
+    const loggedInDusername = req.session.user?.username;
 
     if (!loggedInDusername) {
         return res.redirect('/');
