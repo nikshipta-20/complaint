@@ -462,7 +462,9 @@ app.post("/mycomplaints/withdraw", (req, res) => {
 
 
 app.get("/dhome", function(req, res) {
-    // console.log(loggedInDusername);
+    const loggedInDusername = req.session.user?.username;
+    console.log("line 459", req.session.user);
+    console.log(loggedInDusername);
     if (!req.session.user || req.session.user.type !== 'department') {
         return res.redirect('/');
     }
@@ -485,7 +487,7 @@ app.get("/dcomplaints", (req, res) => {
     console.log("inside dcomplaints");
     console.log("session", req.session);
     const loggedInDusername = req.session.user?.username;
-    console.log("dusername", loggedInDusername);
+    console.log("dusername in line 484", loggedInDusername);
 
     if (!loggedInDusername) {
         return res.redirect('/');
@@ -497,7 +499,7 @@ app.get("/dcomplaints", (req, res) => {
             console.log(deptid);
             console.log("Inside dcomplaints");
             pool.query('SELECT cid, userid, date, description, upvotes, status, remarks FROM complaints c join departments d on c.deptid = d.deptid WHERE d.deptid = ? order by upvotes desc', [deptid], (err, results, fields) => {
-                if(results.length > 0){
+                if(results){
                     let dcomplaints = [];
                     // console.log("Inside if");
                     for(var i = 0; i < results.length; i++){
@@ -536,6 +538,8 @@ app.get("/dashboard", function(req, res) {
     let yettobechecked = 0;
     let progress = 0;
     let dashboard = [];
+
+    const loggedInDusername = req.session.user?.username;
 
     pool.query('SELECT * FROM departments WHERE dusername = ?', [loggedInDusername], (err, results1) => {
         if (err) {
@@ -641,7 +645,6 @@ app.get("/dashboard", function(req, res) {
         }
     });
 });
-
 
 
 app.post("/dashboard", function(req, res) {
